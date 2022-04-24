@@ -6,7 +6,7 @@ const compalintArea = sequelize.define("complaint_area", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  District: {
+  distict: {
     type: DataTypes.STRING,
     allowNull: false,
   },

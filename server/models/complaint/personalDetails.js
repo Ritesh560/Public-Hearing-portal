@@ -32,6 +32,7 @@ const personalDetails = sequelize.define("personal_details", {
     type: DataTypes.INTEGER,
     primaryKey: true,
     allowNull: false,
+    unique: true,
   },
 })
 

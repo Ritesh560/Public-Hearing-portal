@@ -5,10 +5,11 @@ const app = express()
 
 //middleware
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 
 //handel requests from frontend
-app.use("/", require("./router"))
+const router = require("./router")
+app.use("/", router)
 
 //port
 const PORT = process.env.PORT || 8080
