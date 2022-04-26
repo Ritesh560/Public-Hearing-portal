@@ -3,7 +3,7 @@ const sequelize = require("../../database")
 
 const personalDetails = sequelize.define("personal_details", {
   id: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true,

@@ -27,7 +27,6 @@ complaintDetails.belongsTo(personal_details, {
 
 personal_details.hasOne(compalintArea, {
   foreignKey: "adhar_number",
-  onDelete: "CASCADE",
 })
 compalintArea.belongsTo(personal_details, {
   foreignKey: "adhar_number",
@@ -42,11 +41,12 @@ complaintDetails.belongsTo(officerLogin, {
 })
 
 complaintDetails.hasOne(report, {
-  foreignKey: "adhar_number",
+  foreignKey: "complaint_details_id",
+  as: "complaint_id",
   onDelete: "CASCADE",
 })
 report.belongsTo(complaintDetails, {
-  foreignKey: "adhar_number",
+  foreignKey: "complaint_details_id",
 })
 
 const db = { personal_details, compalintArea, complaintDetails, officerLogin, report }
@@ -56,7 +56,7 @@ sequelize.sync({ force: false }).then(() => console.log("suceesfully syc done.")
 //testcases
 
 // .then(() => {
-//   { "name": "name", "father_name": "abc", "mobile_number": 12456, "gender": "male", "email": "email.com", "adhar_number": 458985849, "reference_type": "reference", "department": "test", "grievance_category": "test", "application_details": "hello", "area": "yahi ka hun", "distict": "haryana", "tehsil": "abc", "block": "abc", "village_panchayat": "abc", "rajsva_village": "abc", "thana": "abc", "residencial_address": "acjd" }
+//   { "name": "name", "father_name": "abc", "mobile_number": 12456, "gender": "male", "email": "email.com", "adhar_number": 458985849, "reference_type": "reference","officer_id":2, "department": "test", "grievance_category": "test", "application_details": "hello", "area": "yahi ka hun", "distict": "haryana", "tehsil": "abc", "block": "abc", "village_panchayat": "abc", "rajsva_village": "abc", "thana": "abc", "residencial_address": "acjd" }
 //   const test1 = {
 //     adhar_number: data.adhar_number,
 //     reference_type: data.reference_type,

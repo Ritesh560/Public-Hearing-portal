@@ -19,6 +19,7 @@ const registerComplaint = async (req, res) => {
   }
   let complaint = {
     adhar_number: req.body.adhar_number,
+    officer_id: req.body.officer_id,
     reference_type: req.body.reference_type,
     department: req.body.department,
     grievance_category: req.body.grievance_category,
@@ -36,8 +37,8 @@ const registerComplaint = async (req, res) => {
     residencial_address: req.body.residencial_address,
   }
 
-  const Personal = await personal_details.create(personal).catch((err) => res.send(err))
   const Complaint = await complaintDetails.create(complaint).catch((err) => res.send(err))
+  const Personal = await personal_details.create(personal).catch((err) => res.send({ complaint }))
   const Area = await compalintArea.create(AreaComplaint).catch((err) => res.send(err))
 
   res.send({ Personal, Complaint, Area })
@@ -46,27 +47,36 @@ const registerComplaint = async (req, res) => {
 
 // 2. function for getting relative complaint and report
 const fetchComplaintData = async (req, res) => {
-  console.log("------------------")
+  console.log("-------------------------------")
 
-  const complaintData = await personal_details
-    .findOne({
+  const personalData = await personal_details
+    .findAll({
       where: { adhar_number: req.body.adhar_number },
-      include: [
-        { model: complaintDetails, where: { adhar_number: req.body.adhar_number } },
-        ,
-        {
-          model: compalintArea,
-          where: {
-            adhar_number: req.body.adhar_number,
-          },
-        },
-        { model: report, where: { adhar_number: req.body.adhar_number } },
-      ],
+      // include: {
+      //   model: complaintDetails,
+      //   required: false,
+      // include: {
+      //   model: report,
+      //   required: false,
+      // },
+      // },
     })
     .catch((err) => res.send(err))
 
-  res.status(200).send(complaintData)
-  console.log(complaintData)
+  const AreaData = await compalintArea
+    .findAll({
+      where: { adhar_number: req.body.adhar_number },
+    })
+    .catch((err) => res.send(err))
+
+  const complaintsData = await complaintDetails
+    .findAll({
+      where: { adhar_number: req.body.adhar_number },
+    })
+    .catch((err) => res.send(err))
+
+  res.status(200).send({ personalData, AreaData, complaintsData })
+  console.log()
 }
 
 // 3. function for getting complaints according to the officer
@@ -74,6 +84,18 @@ const complaintsToOfficer = async (req, res) => {
   const complaints = await complaintDetails.findAll({ where: { officer_id: req.body.officer_id } })
   res.status(200).send(complaints)
   console.log(complaints)
+}
+
+// 7. create credentials for officers
+const createCredentials = async (req, res) => {
+  const data = {
+    userId: req.body.userId,
+    password: req.body.password,
+    name: req.body.name,
+    officer_id: req.body.officer_id,
+  }
+  const credential = await officerLogin.create(data).catch((err) => res.send(err))
+  res.send(credential)
 }
 
 // 4. login credentials of officers
@@ -92,4 +114,21 @@ const addReport = async (req, res) => {
   const data = await report.create(info)
 }
 
-module.exports = { registerComplaint, fetchComplaintData, complaintsToOfficer, officerCredential, addReport }
+// 6. fetch report data
+const getReport = async (req, res) => {
+  const complaintInfo = await complaintDetails.findAll({ where: { id: req.body.id } }).catch((err) => res.send(err))
+
+  const reportInfo = await report.findAll({ where: { complaint_id: req.body.complaint_id } }).catch((err) => res.send(complaintInfo))
+  res.status(200).send({ complaintInfo, reportInfo })
+}
+
+module.exports = { registerComplaint, fetchComplaintData, complaintsToOfficer, officerCredential, addReport, createCredentials }
+
+// include: [
+//   {
+//     model: compalintArea,
+//     required: true,
+
+//     include: [{ model: report, required: false }],
+//   },
+// ],

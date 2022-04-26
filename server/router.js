@@ -10,5 +10,6 @@ router.get("/fetchComplaintData", complaint.fetchComplaintData)
 router.get("/complaintsToOfficer", complaint.complaintsToOfficer)
 router.get("/officerCredential", complaint.officerCredential)
 router.post("/addReport", complaint.addReport)
+router.post("/createCredentails", complaint.createCredentials)
 
 module.exports = router

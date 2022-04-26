@@ -17,6 +17,7 @@ const officerLogin = sequelize.define("officer_login", {
   },
   officer_id: {
     type: DataTypes.INTEGER,
+    unique: true,
   },
 })
 
