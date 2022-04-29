@@ -42,7 +42,6 @@ complaintDetails.belongsTo(officerLogin, {
 
 complaintDetails.hasOne(report, {
   foreignKey: "complaint_details_id",
-  as: "complaint_id",
   onDelete: "CASCADE",
 })
 report.belongsTo(complaintDetails, {

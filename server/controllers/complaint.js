@@ -81,7 +81,7 @@ const fetchComplaintData = async (req, res) => {
 
 // 3. function for getting complaints according to the officer
 const complaintsToOfficer = async (req, res) => {
-  const complaints = await complaintDetails.findAll({ where: { officer_id: req.body.officer_id } })
+  const complaints = await complaintDetails.findAll({ where: { officer_id: req.body.officer_id } }).catch((err) => res.send(err))
   res.status(200).send(complaints)
   console.log(complaints)
 }
@@ -100,29 +100,35 @@ const createCredentials = async (req, res) => {
 
 // 4. login credentials of officers
 const officerCredential = async (req, res) => {
-  const credentials = await officerLogin.findOne({ where: { userId: req.body.userId, password: req.body.password } })
+  const credentials = await officerLogin.findOne({ where: { userId: req.body.userId, password: req.body.password } }).catch((err) => res.send(err))
+  if (credentials) {
+    const complaints = await complaintDetails.findAll({ where: { officer_id: credentials.officer_id } }).catch((err) => res.send(err))
+    res.status(200).send(complaints)
+  }
   res.status(200).send(credentials)
 }
 
 // 5. function for officer's report to particular complaint
 const addReport = async (req, res) => {
   const info = {
+    complaint_details_id: req.body.id,
     adhar_number: req.body.adhar_number,
     title: req.body.title,
     body: req.body.body,
   }
-  const data = await report.create(info)
+  const data = await report.create(info).catch((err) => res.send(err))
+  res.send(data)
 }
 
 // 6. fetch report data
 const getReport = async (req, res) => {
   const complaintInfo = await complaintDetails.findAll({ where: { id: req.body.id } }).catch((err) => res.send(err))
 
-  const reportInfo = await report.findAll({ where: { complaint_id: req.body.complaint_id } }).catch((err) => res.send(complaintInfo))
+  const reportInfo = await report.findAll({ where: { complaint_details_id: req.body.id } }).catch((err) => res.send(complaintInfo))
   res.status(200).send({ complaintInfo, reportInfo })
 }
 
-module.exports = { registerComplaint, fetchComplaintData, complaintsToOfficer, officerCredential, addReport, createCredentials }
+module.exports = { registerComplaint, fetchComplaintData, complaintsToOfficer, officerCredential, addReport, createCredentials, getReport }
 
 // include: [
 //   {
