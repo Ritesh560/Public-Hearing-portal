@@ -1,0 +1,52 @@
+[
+	{   "id" : 1,
+        "complaint_id" : 3348,
+        "department" : "DWO",
+        "status" : "Disposed",
+		"officer": "Rahul Sharma",
+        "officer_id": 1001,
+        "name" : "Manish Kumar",
+        "aadhar" : 13784305,
+        "application" : "I have applied for anna yojna but did not get the benefit.",
+        "report" : "You will get the benefit as soon as possible."
+        
+	},
+    {
+        "id" : 2,
+        "complaint_id" : 2049,
+        "department" : "Minority",
+        "status" : "Disposed",
+        "officer": "Rahul Sharma",
+        "officer_id": 1001,
+        "name" : "Manish Kumar",
+        "aadhar" : 13784305,
+        "application" : "I have applied for anna yojna but did not get the benefit.",
+        "report" : "You will get the benefit as soon as possible." 
+
+    },
+    {
+         "id" : 3,
+        "complaint_id" : 1579,
+        "department" : "DCWO",
+        "status" : "Pending",
+        "officer": "Rahul Sharma",
+        "officer_id": 1001,
+        "name" : "Manish Kumar",
+        "aadhar" : 13784305,
+        "application" : "I have applied for anna yojna but did not get the benefit.",
+        "report" : "You will get the benefit as soon as possible."
+    },
+    {
+         "id" : 4,
+        "complaint_id" :1425,
+        "department" : "DWO",
+        "status" : "Disposed",
+        "officer": "Rahul Sharma",
+        "officer_id": 1001,
+        "name" : "Manish Kumar",
+        "aadhar" : 13784305,
+        "application" : "I have applied for anna yojna but did not get the benefit.",
+        "report" : "You will get the benefit as soon as possible."
+
+    }
+]

@@ -105,7 +105,8 @@ const officerCredential = async (req, res) => {
     const complaints = await complaintDetails.findAll({ where: { officer_id: credentials.officer_id } }).catch((err) => res.send(err))
     res.status(200).send(complaints)
   }
-  res.status(200).send(credentials)
+  console.log(credentials)
+  res.status(200).send(req.body.userId, credentials)
 }
 
 // 5. function for officer's report to particular complaint

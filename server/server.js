@@ -4,6 +4,12 @@ const cors = require("cors")
 const app = express()
 
 //middleware
+app.use(
+  cors({
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  })
+)
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

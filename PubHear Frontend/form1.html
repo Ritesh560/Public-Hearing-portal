@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="form1.css">
+  <title>Registration Form</title>
+</head>
+
+<body>
+    <!--First Navigation Bar*/-->
+
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd">
+      <div class="container-fluid1">
+        <a class="navbar-brand" href="Index.html">
+          <img src="Img/Logo.png" alt="" class="d-inline-block align-text-top logo" />
+          Public Hearing Portal
+        </a>
+      </div>
+    </nav>
+
+    <!--Second Navigation Bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand brand" href="#">Public Hearing</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="./form1.html">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="./form2.html">Track</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Registration Form-->
+
+  <form  method="post" id = "form">
+    <p class="hc">Applicant Detail</p>
+    <hr style="color:red; ">
+    <input type="checkbox" name="group grievance" id="group_grievance" value="Group Grievance">Group Grievance
+    <div class="row g-3">
+
+      <div class="col-md-4">
+        <label for="name">Name<span style="color: red;">*</span></label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div class="col-md-5">
+        <label for="father/husband">Father/Husband Name<span style="color: red;">*</span></label>
+        <input type="text" id="father/husband" name="father/husband name" required>
+      </div>
+      <div class="col-md-3">
+        <label for=""> Gender<span style="color: red;">*</span></label>
+        <select name="Gender" id="gender" class="sel" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="number1">Mobile No.1<span style="color: red;">*</span></label>
+        <input type="number" id="number1" name="Mobile number1"  required>
+      </div>
+      <div class="col-md-4">
+        <label for="number2">Mobile No.2</label>
+        <input type="number" id="number2" name="Mobile number2">
+      </div>
+      <div class="col-md-4">
+        <label for="emailId">Email</label>
+        <input type="email" id="email" name="email">
+      </div>
+      <div class="col-md-12">
+        <label for="aadhar">Aadhar No.</label>
+        <input type="text" id="aadhar" name="adhar number">
+      </div>
+    </div>
+    
+<hr>
+      <p class="hc">Complaint details</p>
+      <hr style="color: red;">
+      <div class="row g-3">
+      <div class="col-md-6">
+        <span>Reference Type<span style="color: red; padding-right:10px;margin-bottom: 15px;">*</span></span>
+        <input type="radio" name="reference" value="Complaint" required>Complaint
+        <input type="radio" name="reference" value="Suggestion" required>Suggestion
+        <input type="radio" name="reference" value="Demand" required>Demand
+        <input type="radio" name="reference" value="Others" required>Others
+      </div>
+      <div class="col-md-3">
+        <label for="department"> Department<span style="color: red;">*</span></label>
+        <input type="text" id="department" name=" department" class = "sel" required>
+      </div>
+      <div class="col-md-3">
+        <label for="Grievance Category">Grievance Type<span style="color: red;">*</span></label>
+        <input type="text" id="Grievance_type" name="Grievance" class = "sel" required>
+      </div>
+      <div class="col-md-12">
+        <p class="">Application details <span style="color: red;">*</span></p>
+        <textarea name="application" id="application" cols="50" rows="10" required></textarea>
+      </div>
+    </div>
+    <hr>
+    <p class="hc">Complaint/Demand/Suggestion/Others area details</p>
+    <hr style="color: brown;">
+    <div class="row g-3">
+      <div class="col-md-12">
+        <span>Area <span style="color: red; padding-right: 10px;">*</span></span>
+        <input type="radio" name="Area" value="Rural" required>Rural
+        <input type="radio" name="Area" value="Arban" required>Urban
+      </div>
+      <div class="col-md-3">
+        <label for="Country">Country</label>
+        <input type="text" id="Country" name="Country name" class = "sel" value = "India" required disabled>
+      </div>
+      <div class="col-md-3">
+        <label for="state">State<span style="color: red;">*</span></label>
+        <input type="text" id="state" name="state" class = "sel" required>
+      </div>
+      <div class="col-md-3"> <label for="District">District<span style="color: red;">*</span></label>
+        <input type="text" id="District" name="District" class = "sel" required>
+           </div>
+      <div class="col-md-3"> <label for="Tahsheel">Tahsheel<span style="color: red;">*</span></label>
+        <input type="text" id="Tahsheel" name="Tahsheel" class = "sel" required>
+      </div>
+      <div class="col-md-3">
+        <label for="Block">Block<span style="color: red;">*</span></label>
+        <input type="text" id="Block" name="Block" class = "sel" required>
+      </div>
+      <div class="col-md-3">
+        <label for="Village">Village<span style="color: red;">*</span></label>
+        <input type="text" id="Village" name="Village" class = "sel" required>
+      </div>
+      <div class="col-md-3">
+        <label for="Rajasva village">Rajasva<span style="color: red;">*</span></label>
+        <input type="text" id="Rajasva" name="Rajasva" class = "sel" required>
+      </div>
+      <div class="col-md-3">
+        <label for="Thana">Thana<span style="color: red;">*</span></label>
+        <input type="text" id="Thana" name="Thana" class = "sel" required>
+         </div>
+      <div class="col-md-12">
+        <label for="residential_address">Residential Address<span style="color: red; ">*</span></label>
+        <input type="text" name="Residential address" id="residential_address" required>
+      </div>
+    </div>
+    <hr>
+    <p class="hc">Reference documents & details of old reference</p>
+   <hr style="color: red;">
+  <div class="row g-3">
+    <div class="col-md-6">
+      <input type="checkbox" id="old_reference" value="old reference" name="old reference"> <span>Old Reference <span
+        style="color: red;">(if any)</span></span>
+      </div>
+    <div class="col-md-6">
+       <label for="reference no.">Reference No.</label>
+    <input type="number" id="reference no." name="reference no.">
+  </div>
+<div class="col-md-12 ">
+    <p>Click For Upload Reference Documents </p>
+    <input type="file" id="reference_file" name="reference file" multiple >
+  </div>
+<div> <input type="submit" onclick = "subreg()">
+    <input type="reset">
+  </div>
+</div>
+  </form>
+  <div id = "result">
+    
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <script type="text/javascript" src="Register Complaint.js"></script>
+</body>
+
+</html>

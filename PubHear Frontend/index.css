@@ -1,0 +1,93 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+body {
+  background-image: url(Img/1.jfif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px red;
+  font-size: 110%;
+}
+
+.cardcontainer {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding-top: 40px;
+}
+
+.container-fluid1 {
+  position: relative;
+  margin-left: 35%;
+}
+
+.card {
+  align-items: center;
+}
+
+.slide {
+  padding-top: 0px;
+  overflow: hidden;
+  width: 100%;
+  height: 60vh;
+}
+
+.formCard {
+  width: 18rem;
+  height: 13rem;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.btn {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 24%;
+  width: 120px;
+}
+
+.staticsHeading {
+  font-size: large;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.statics {
+  margin: 5%;
+  border: 2px solid rgb(112, 109, 109);
+  text-align: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.about {
+  color: white;
+  background-color: black;
+}
+
+.copyright {
+  margin: 20px 0px;
+  padding: 5px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+}

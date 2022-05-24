@@ -1,0 +1,31 @@
+body{
+  background-image: url(Img/bgform.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px red;
+  font-size: 110%;
+}
+.logo {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+ 
+.hc{
+    color: rgb(142 177 33);
+    text-align: center;
+    justify-content: center;  
+}
+hr{
+  border: 2px solid red;
+}
+.color{
+  color: black;
+}
+
+#hover{
+  cursor: pointer;
+}

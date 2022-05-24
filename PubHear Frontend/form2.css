@@ -1,0 +1,33 @@
+body {
+    background-image: url('Img/bgform.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px red;
+    font-size: 110%;
+}
+
+#container {
+    height: 50vh;
+    width: 50vw;
+    margin: 10% 25%;
+    padding: 10px 20px;
+    border: 1px solid blue;
+}
+
+input {
+    margin: 3px;
+    box-shadow: 1px 1px blue;
+}
+
+#Submit {
+    text-decoration: none;
+    color: black;
+}
+
+#Home {
+    text-decoration: none;
+    color: black;
+}

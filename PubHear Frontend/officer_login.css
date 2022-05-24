@@ -1,0 +1,32 @@
+body {
+    background-image: url(Img/bgform.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px red;
+    font-size: 110%;
+}
+
+#container {
+    height: 30vh;
+    width: 40vw;
+    margin: 10% 25%;
+    padding: 10px 20px;
+    border: 2px solid blue;
+}
+
+input {
+    margin: 3px;
+    box-shadow: 1px 1px blue;
+}
+
+button {
+    margin-left: 15vw;
+} 
+
+#loginid{
+    text-decoration: none;
+    color: darkkhaki;
+}
