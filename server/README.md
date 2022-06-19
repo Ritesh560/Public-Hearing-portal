@@ -5,8 +5,9 @@
 clone the repo and install dependencies:-
 
 ```bash
-git clone https://github.com/Ritesh560/node-todo-api.git
+git clone <code link>
 cd <project-name>
+cd backend
 npm install
 ```
 
